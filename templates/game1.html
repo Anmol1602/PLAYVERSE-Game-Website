@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+    <h1 class="text-3xl font-bold mb-6">Guess the Number</h1>
+
+    <div class="bg-white p-6 rounded shadow-md max-w-md w-full">
+        <form method="POST" class="mb-4">
+            <label for="guess" class="block text-lg font-semibold mb-2">Enter your guess:</label>
+            <input type="number" id="guess" name="guess" 
+                   class="w-full border px-4 py-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   placeholder="1-10" required>
+            <button class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>
+        </form>
+
+        <!-- Game Feedback -->
+        {% if feedback %}
+            <div class="text-center mb-4">
+                <p class="text-lg text-gray-800">{{ feedback }}</p>
+            </div>
+        {% endif %}
+
+        <!-- Game Stats -->
+        <div class="bg-gray-50 p-4 rounded shadow-md">
+            <h2 class="text-lg font-bold mb-2">Game Statistics</h2>
+            <p>Attempts: {{ attempts }}</p>
+        </div>
+
+        <!-- Reset Button -->
+        <form method="GET" class="mt-4">
+            <button name="reset" class="w-full bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Reset Game</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Game Portal{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Ensure the page takes full height */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        /* Flex container to ensure footer sticks at bottom */
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Main content grows to push footer to the bottom */
+        .flex-content {
+            flex: 1;
+        }
+        /* Ensuring no large gap after content */
+        .content-area {
+            margin-bottom: 1.2rem; /* Adjust this to your desired space */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="flex-container">
+        <!-- Include Navbar -->
+        {% include 'navbar.html' %}
+
+        <!-- Main Content -->
+        <main class="flex-content container mx-auto py-8">
+            <div class="content-area">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+        <!-- Include Footer -->
+        {% include 'footer.html' %}
+    </div>
+
+    <script>
+        // Toggle the mobile menu visibility
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

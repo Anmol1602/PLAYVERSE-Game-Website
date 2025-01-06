@@ -1,0 +1,19 @@
+<nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo and Game Portal Name -->
+        <a href="{{ url_for('home') }}" class="flex items-center space-x-2 text-xl font-bold">
+            <img src="/static/media/logo.webp" alt="Game Portal Logo" class="w-8 h-8"> <!-- Logo -->
+            <span>PLAYVERSE</span> <!-- Game Portal Name -->
+        </a>
+        <ul class="flex space-x-6">
+            <li><a href="{{ url_for('about') }}" class="hover:underline">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}" class="hover:underline">Contact Us</a></li>
+            <li><a href="{{ url_for('team') }}" class="hover:underline">Our Team</a></li>
+            {% if 'user_id' in session %}
+                <li><a href="{{ url_for('dashboard') }}" class="hover:underline">Dashboard</a></li>
+                <li><a href="{{ url_for('edit_profile') }}" class="hover:underline">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" class="hover:underline text-red-300">Log Out</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Rock, Paper, Scissors</h1>
+
+    <!-- Game Instructions -->
+    <p class="mb-4">Choose one of the options below to play against the computer:</p>
+
+    <!-- Game Choices -->
+    <form method="POST">
+        <div class="grid grid-cols-3 gap-4 mb-4">
+            {% for choice in choices %}
+            <button
+                type="submit"
+                name="choice"
+                value="{{ choice }}"
+                class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                {{ choice }}
+            </button>
+            {% endfor %}
+        </div>
+    </form>
+
+    <!-- Reset Button (Using GET request for reset) -->
+    <a href="{{ url_for('games.game2', reset=True) }}"
+        class="inline-block bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+        Reset Game
+    </a>
+
+    <!-- Game Result -->
+    {% if result %}
+    <div class="mt-6">
+        {% if not reset %}
+            <!-- Show choices when it's not a reset -->
+            <p class="text-xl font-semibold">Your choice: <span class="text-blue-500">{{ user_choice }}</span></p>
+            <p class="text-xl font-semibold">Computer's choice: <span class="text-blue-500">{{ computer_choice }}</span></p>
+        {% endif %}
+        <!-- Show result always, whether reset or not -->
+        <p class="text-2xl font-bold mt-4">{{ result }}</p>
+    </div>
+{% endif %}
+</div>
+{% endblock %}

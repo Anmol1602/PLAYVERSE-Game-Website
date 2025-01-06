@@ -1,0 +1,31 @@
+[
+    {
+        "user_id": 1,
+        "game": "Guess the Number",
+        "statistics": {
+            "total_attempts": 8,
+            "lowest_attempts": 1,
+            "highest_attempts": 4,
+            "games_played": 1
+        }
+    },
+    {
+        "user_id": 1,
+        "game": "Rock Paper Scissors",
+        "statistics": {
+            "games_won": 1,
+            "games_lost": 0,
+            "games_tied": 0,
+            "games_played": 1
+        }
+    },
+    {
+        "user_id": 1,
+        "game": "Math Quiz",
+        "statistics": {
+            "games_won": 3,
+            "games_lost": 1,
+            "games_played": 4
+        }
+    }
+]
