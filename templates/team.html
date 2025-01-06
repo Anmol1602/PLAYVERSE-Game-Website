@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Team{% endblock %}
+
+{% block content %}
+<div class="bg-gradient-to-r from-blue-50 to-blue-100 py-12">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-extrabold text-blue-800 mb-6">
+            Meet Our Amazing Team! 👾
+        </h1>
+        <p class="text-lg text-gray-700 mb-8">
+            Our team is a group of passionate, creative, and skilled individuals who work together to bring you the best gaming experience possible. Let’s introduce you to the amazing minds behind PLAYVERSE! 💥
+        </p>
+
+        <!-- Section for Team Members -->
+        <div class="flex flex-col lg:flex-row justify-center gap-8">
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ url_for('static', filename='media/Me.jpg') }}" alt="John Doe" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">John Doe 👨‍💻</h3>
+                <p class="text-gray-600 mb-2">Lead Developer</p>
+                <p class="text-gray-500">John is the mastermind behind the code that powers our platform. He ensures that everything runs smoothly and efficiently! ⚙️</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ url_for('static', filename='media/Me.jpg') }}" alt="Jane Smith" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Jane Smith 💡</h3>
+                <p class="text-gray-600 mb-2">UI/UX Designer</p>
+                <p class="text-gray-500">Jane brings our games to life with stunning visuals and user-friendly interfaces. Her creativity drives the look and feel of our platform. 🎨</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ url_for('static', filename='media/Me.jpg') }}" alt="Alex Johnson" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Alex Johnson 🎮</h3>
+                <p class="text-gray-600 mb-2">Game Designer</p>
+                <p class="text-gray-500">Alex designs the gameplay mechanics and ensures that every game we create is fun and challenging. 🕹️</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
